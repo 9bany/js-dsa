@@ -1,10 +1,5 @@
-const {
-  reverseString,
-  reverseStringBetterOne
-} = require("./strings/reverse_string")
+const mergeSort = require("./array/mergesort")
 
-const result = reverseString("bany")
-const result2 = reverseStringBetterOne("bany nef")
+let result = mergeSort([0,3,4], [4,6,30, 46])
 
 console.log(result)
-console.log(result2)
