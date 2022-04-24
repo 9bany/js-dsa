@@ -8,6 +8,10 @@ class BTArray {
     return this.data[index]
   }
 
+  getAll = () => {
+    return this.data
+  }
+
   push = (value) => {
     this.data[this.length] = value;
     this.length++;
