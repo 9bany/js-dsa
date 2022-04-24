@@ -20,6 +20,19 @@ class BTArray {
     this.length--;
     return lastItem;
   }
+
+  delete = (index) => {
+    const item = this.data[index]
+    this.shiftItms(index)
+    this.pop()
+    return item
+  }
+
+  shiftItms = (index) => {
+    for (let i = index; i < this.length - 1; i++) {
+      this.data[i] = this.data[i+1]
+    }
+  }
 }
 
 module.exports = BTArray;
