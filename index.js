@@ -1,10 +1,5 @@
-const BTArray = require('./array/btarray.js')
-const newArray = new BTArray()
-newArray.push(1)
-newArray.push(2)
-newArray.push(3)
-console.log("push result", newArray)
-newArray.delete(1)
-console.log("delete result", newArray)
-console.log(newArray.getAll())
+const reverseString = require("./strings/reverse_string")
 
+const result = reverseString("bany")
+
+console.log(result)
