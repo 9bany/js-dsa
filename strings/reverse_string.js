@@ -11,4 +11,12 @@ function reverseString(string) {
   return backwords.join('')
 }
 
-module.exports = reverseString;
+// better one
+function reverseStringBetterOne(string) {
+  return string.split('').reverse().join('')
+}
+
+module.exports = { 
+  reverseString,
+  reverseStringBetterOne
+}
