@@ -1,7 +1,7 @@
 class BTArray {
   constructor() {
     this.length = 0
-    this.data = null
+    this.data = {}
   }
 
   get = (index) => {
@@ -9,7 +9,9 @@ class BTArray {
   }
 
   push = (value) => {
-  
+    this.data[this.length] = value;
+    this.length++;
+    return this.length;
   }
 }
 
