@@ -19,6 +19,17 @@ class HashTable {
     this.data[address].push([key, value])
     return this.data
   }
+
+  get(key) {
+    let address = this._hash(key)
+    let currentBuckets = this.data[address]
+    for(let i = 0; i < currentBuckets.length; i++) {
+      if(currentBuckets[i][0] === key) {
+        return currentBuckets[i][1]
+      }
+    }
+    return undefined
+  }
 }
 
 module.exports = HashTable;
