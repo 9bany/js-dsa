@@ -30,6 +30,19 @@ class HashTable {
     }
     return undefined
   }
+
+  keys() {
+    if (!this.data.length) {
+      return undefined
+    }
+    let keyArray = []
+    for(let i = 0; i < this.data.length; i++) {
+      if (this.data[i]) {
+        keyArray.push(this.data[i][0][0])
+      }
+    }
+    return keyArray
+  }
 }
 
 module.exports = HashTable;
