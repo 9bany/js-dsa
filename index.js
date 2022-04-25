@@ -1,8 +1,5 @@
-const HashTable = require("./hashtable/hashtable.js")
+const recurringCharacter = require("./challenge/google_question.js")
 
-let hashTable = new HashTable(50)
-hashTable.set("grapes", '1000')
-hashTable.set("apples", 100)
-let result = hashTable.keys()
+let result = recurringCharacter([2,1,1,2,3,5,1,2,4])
 
 console.log(result)
