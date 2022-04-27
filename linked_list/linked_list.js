@@ -34,7 +34,7 @@ class LinkedList {
     var array = []
     var currentNode = this.head
     while(currentNode != null) {
-      array.push(currentNode)
+      array.push(currentNode.value)
       currentNode = currentNode.next
     }
     console.log(array)
@@ -42,40 +42,35 @@ class LinkedList {
   }
 
   insert(index, value) {
-    if (index > this.length - 1 || index < 0) {
-      console.log("Index out of range")
-      return this;
+    if (index >= this.length) {
+      return this.append(value)
     }
     
     if (index == 0) {
       return this.prepend(value)
     }
-
-    if (index == this.length - 1) {
-      return this.append(value)
-    }
-    
-    var currentIndex = 1
-    var currentNode = this.head.next
-    var previousNode = this.head
     
     var newNode = {
       value: value,
       next: null
     }
     
-    while(currentNode != null) {
-      if (currentIndex == index) {
-        newNode.next = currentNode
-        previousNode.next = newNode
-        this.length++;
-        break;
-      }
-      previousNode = currentNode
-      currentNode = currentNode.next
-      currentIndex++;
-    }
+    const leader = this.treverseToIndex(index-1)
+    const hodingPointer = leader.next
+    leader.next =  newNode
+    newNode.next = hodingPointer
+    this.length++;
     return this;
+  }
+
+  treverseToIndex(index) {
+    var counter = 0
+    var currentNode = this.head
+    while(index != counter) {
+      currentNode = currentNode.next 
+      counter++;
+    }
+    return currentNode;
   }
 }
 
