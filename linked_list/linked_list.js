@@ -18,6 +18,17 @@ class LinkedList {
     this.length++;
     return this;
   }
+  
+  prepend(value) {
+    var newNode = {
+      value: value,
+      next: null
+    }
+    newNode.next = this.head
+    this.head = newNode
+    this.length++;
+    return this;
+  }
 }
 
 module.exports = LinkedList;
