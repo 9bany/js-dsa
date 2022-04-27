@@ -40,6 +40,43 @@ class LinkedList {
     console.log(array)
     return array 
   }
+
+  insert(index, value) {
+    if (index > this.length - 1 || index < 0) {
+      console.log("Index out of range")
+      return this;
+    }
+    
+    if (index == 0) {
+      return this.prepend(value)
+    }
+
+    if (index == this.length - 1) {
+      return this.append(value)
+    }
+    
+    var currentIndex = 1
+    var currentNode = this.head.next
+    var previousNode = this.head
+    
+    var newNode = {
+      value: value,
+      next: null
+    }
+    
+    while(currentNode != null) {
+      if (currentIndex == index) {
+        newNode.next = currentNode
+        previousNode.next = newNode
+        this.length++;
+        break;
+      }
+      previousNode = currentNode
+      currentNode = currentNode.next
+      currentIndex++;
+    }
+    return this;
+  }
 }
 
 module.exports = LinkedList;
