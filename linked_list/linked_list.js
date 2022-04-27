@@ -55,7 +55,7 @@ class LinkedList {
       next: null
     }
     
-    const leader = this.treverseToIndex(index-1)
+    const leader = this.traverseToIndex(index-1)
     const hodingPointer = leader.next
     leader.next =  newNode
     newNode.next = hodingPointer
@@ -63,14 +63,22 @@ class LinkedList {
     return this;
   }
 
-  treverseToIndex(index) {
+  traverseToIndex(index) {
     var counter = 0
     var currentNode = this.head
-    while(index != counter) {
+    while(index !== counter) {
       currentNode = currentNode.next 
       counter++;
     }
     return currentNode;
+  }
+
+  remove(index) {
+    if (index === 0) { this.head = this.head.next; return this }
+    const leader = this.traverseToIndex(index-1)
+    const hodingPointer = leader.next
+    leader.next = hodingPointer.next
+    return this
   }
 }
 
