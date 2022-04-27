@@ -9,7 +9,14 @@ class LinkedList {
   }
 
   append(value) {
-    // code here
+    var newNode = {
+      value: value,
+      next: null
+    }
+    this.tail.next = newNode
+    this.tail = newNode
+    this.length++;
+    return this;
   }
 }
 
