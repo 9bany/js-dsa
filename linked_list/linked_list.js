@@ -29,6 +29,17 @@ class LinkedList {
     this.length++;
     return this;
   }
+
+  printList() {
+    var array = []
+    var currentNode = this.head
+    while(currentNode != null) {
+      array.push(currentNode)
+      currentNode = currentNode.next
+    }
+    console.log(array)
+    return array 
+  }
 }
 
 module.exports = LinkedList;
