@@ -1,5 +1,6 @@
-const recurringCharacter = require("./challenge/google_question.js")
+const LinkedList = require("./linked_list/linked_list.js")
 
-let result = recurringCharacter([2,1,1,2,3,5,1,2,4])
+let linkedList = new LinkedList(10)
 
-console.log(result)
+linkedList.append(11)
+console.log(linkedList)
