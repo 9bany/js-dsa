@@ -95,6 +95,7 @@ class DoublyLinkedList {
     this.length--;
     return this
   }
+
 }
 
 module.exports = DoublyLinkedList;
