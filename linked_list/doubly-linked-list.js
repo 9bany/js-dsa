@@ -25,10 +25,14 @@ class DoublyLinkedList {
   prepend(value) {
     var newNode = {
       value: value,
-      next: null
+      next: null,
+      previous: null
     }
-    newNode.next = this.head
+
+    const leader = this.head
     this.head = newNode
+    this.head.next = leader
+    leader.previous = this.head
     this.length++;
     return this;
   }
