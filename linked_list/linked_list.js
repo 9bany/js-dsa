@@ -74,10 +74,15 @@ class LinkedList {
   }
 
   remove(index) {
-    if (index === 0) { this.head = this.head.next; return this }
+    if (index === 0) { 
+      this.head = this.head.next; 
+      this.length--;
+      return this 
+    }
     const leader = this.traverseToIndex(index-1)
     const hodingPointer = leader.next
     leader.next = hodingPointer.next
+    this.length--;
     return this
   }
 }
