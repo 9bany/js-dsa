@@ -59,13 +59,16 @@ class DoublyLinkedList {
     
     var newNode = {
       value: value,
-      next: null
+      next: null,
+      previous: null
     }
     
     const leader = this.traverseToIndex(index-1)
     const hodingPointer = leader.next
     leader.next =  newNode
     newNode.next = hodingPointer
+    hodingPointer.previous = newNode
+    newNode.previous = leader
     this.length++;
     return this;
   }
