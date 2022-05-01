@@ -1,2 +1,2 @@
 # js-dsa
-- Datastrure + Algorithm
+- Data structure + Algorithm
