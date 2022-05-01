@@ -5,6 +5,7 @@ class Node {
   }
 }
 
+// Use linked list
 class Stack {
   constructor() {
     this.top = null
@@ -44,4 +45,29 @@ class Stack {
   }
 }
 
-module.exports = Stack;
+// Use array
+class StackInArray {
+  constructor() {
+    this.array = [];
+  }
+
+  peek() {
+    return this.array[0]
+  }
+
+  push(value) {
+    if (this.array.length == 0) {
+      const newNode = new Node(value)
+      this.array = [newNode]
+    } else {
+      const newNode = new Node(value)
+      this.array = [newNode, ...this.array] 
+    }
+  }
+
+  pop() {
+    return this.array.pop()
+  }
+}
+
+module.exports = {Stack, StackInArray};
