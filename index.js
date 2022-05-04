@@ -9,4 +9,7 @@ tree.insert(30)
 tree.insert(45)
 tree.insert(50)
 
+
+
 console.log(JSON.stringify(tree.root))
+console.log(tree.lookup(50))
